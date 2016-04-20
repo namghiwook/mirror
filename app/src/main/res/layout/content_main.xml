@@ -1,19 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="namghiwook.com.mirror.MainActivity"
-    tools:showIn="@layout/activity_main">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true">
+        <ImageButton xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/btnSpeak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/microphone"
+            android:cropToPadding="false"
+            android:clickable="true"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:background="@drawable/custom_button"
+            android:onClick="toggle"/>
+    </FrameLayout>
+
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/txtText"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="italic"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_marginTop="320dp"
+        android:background="#e4e4e4"
+        android:text="The spoken text will show up here"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="420dp"
+        android:text="The semantic results will show up here"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/jsonView"
+        android:background="#e4e4e4"
+        android:maxLines = "100"
+        android:scrollbars = "vertical"
+        />
+
 </RelativeLayout>
